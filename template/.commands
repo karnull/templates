@@ -5,15 +5,14 @@ return {
     cd_root =  true,
 
     commands = {
-        run    = '',
-        build  = '',
-        test   = '',
+        run    = 'devcontainer exec uv run main',
+        build  = 'devcontainer exec uv run pyinstaller --onefile --name bin --specpath ./build --console --noconfirm ./*/__main__.py',
+        test   = 'devcontainer exec uv run test',
     },
 
     binds = {
-        label  = '',
-        import = '',
-        openbr = '',
+        label = 'O#<Esc>79A=<Esc>jgUU',
+        import= 'Iimport ',
     }
 }
 

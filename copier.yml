@@ -1,7 +1,7 @@
 
 _min_copier_version: "9.10.0"
 _subdirectory: template
-_answers_file: .copier-generic-project/.copier-answers.yml
+_answers_file: .copier-generic-project/.copier-py-answers.yml
 
 #===============================================================================
 # Interactive
@@ -31,6 +31,20 @@ project_description:
          _folder_name.startswith('bench')
          and _folder_name[5:].isdigit()
        ) }}
+
+# common libraries to populate pyproject.toml with
+lib_pack:
+  qmark: "\n >"
+  help: "Library Packs:"
+  type: str
+  multiselect: true
+  choices:
+    - "Data"      # matplotlib, numpy, pandas
+    - "Dantic"    # pydantic
+    - "GUI"       # pyside6
+    - "Serial"    # pyserial
+    - "SQL"       # SQLAlchemy
+    - "WebServer" # fastAPI, uvicorn
 
 
 #===============================================================================
@@ -92,8 +106,6 @@ year:
 # Tasks
 
 _tasks:
-  - command: 'mkdir {{ module_slug }}'
-    when: "{{ _copier_operation == 'copy' }}"
   - command: 'git init'
     when: "{{ _copier_operation == 'copy' }}"
   - command: 'git branch -M main'
