@@ -1,0 +1,19 @@
+
+-- gh:karnull/switchboard.nvim
+
+return {
+    cd_root =  true,
+
+    commands = {
+        run    = '',
+        build  = '',
+        test   = '',
+    },
+
+    binds = {
+        label  = '',
+        import = '',
+        openbr = '',
+    }
+}
+

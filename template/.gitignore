@@ -1,0 +1,16 @@
+
+# .gitignore
+
+# misc
+**/.DS_Store
+**/*.swp
+**/*.swo
+**/.tags
+**/*~
+
+# custom notation for git ignored files
+**/,*
+
+# devcontainer session bash history
+.devcontainer/.bash_history
+
