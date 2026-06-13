@@ -5,15 +5,15 @@ return {
     cd_root =  true,
 
     commands = {
-        run    = '',
-        build  = '',
-        test   = '',
+        run    = 'devcontainer exec go run .',
+        build  = 'devcontainer exec go build .',
+        debug  = 'devcontainer exec dlv debug',
     },
 
     binds = {
-        label  = '',
-        import = '',
-        openbr = '',
+        label  = 'O/*<Esc>76A=<Esc>A*/<CR>',
+        import = 'Iimport ""<Esc>i',
+        openbr = 'A {<CR>}<Esc>O',
     }
 }
 

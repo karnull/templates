@@ -1,7 +1,7 @@
 
 _min_copier_version: "9.10.0"
 _subdirectory: template
-_answers_file: .copier-generic-project/.copier-answers.yml
+_answers_file: .copier-generic-project/.copier-go-answers.yml
 
 #===============================================================================
 # Interactive
@@ -31,6 +31,22 @@ project_description:
          _folder_name.startswith('bench')
          and _folder_name[5:].isdigit()
        ) }}
+
+# project type and features
+app_type:
+  qmark: "\n >"
+  help: "Application Type:"
+  type: str
+  choices:
+    - "CLI"        # cobra cli app
+    - "TUI"        # bubbletea tui app
+    - "WebServer"  # gin/echo web server
+
+include_database:
+  qmark: "\n >"
+  help: "Include Database Support (SQLite via GORM):"
+  type: bool
+  default: false
 
 
 #===============================================================================
@@ -92,8 +108,6 @@ year:
 # Tasks
 
 _tasks:
-  - command: 'mkdir {{ module_slug }}'
-    when: "{{ _copier_operation == 'copy' }}"
   - command: 'git init'
     when: "{{ _copier_operation == 'copy' }}"
   - command: 'git branch -M main'

@@ -4,13 +4,21 @@
 
 
 
-[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/karnull/templates)
+[![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/karnull/templates/tree/go)
 
 ## Setup
 
 ### Requirements
 
 * Add system requirements here
+
+{% if app_type == 'WebServer' %}
+### Environment Variables
+
+| Variable | Default | Description       |
+|----------|---------|-------------------|
+| `PORT`   | `8080`  | HTTP listen port  |
+{% endif %}
 
 ### Build
 
@@ -34,6 +42,13 @@ $ <command>
 $ <command>
 ```
 
+{% if app_type == 'WebServer' %}
+### API Endpoints
+
+| Method | Path      | Description    |
+|--------|-----------|----------------|
+| GET    | `/health` | Health check   |
+{% endif %}
 
 
 ## Documentation

@@ -28,7 +28,11 @@ RUN groupadd --gid 1000 user \
 
 # Switch to non-root user
 USER user
-WORKDIR /home/user
+WORKDIR /workspaces/{{ _folder_name }}
+
+RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.26.4.linux-amd64.tar.gz
+ENV PATH=$PATH:/usr/local/go/bin
+RUN go version
 
 # Reset frontend to interactive
 ENV DEBIAN_FRONTEND=dialog
