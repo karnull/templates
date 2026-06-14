@@ -3,7 +3,7 @@
 
 [![Copier](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/copier-org/copier/master/img/badge/badge-grayscale-inverted-border-orange.json)](https://github.com/copier-org/copier)
 
-This repository provides a template for creating lightweight project skeletons. It got a consistent and reproducible starting point which makes it easier to apply improvements when the template is updated.
+This repository provides a template for creating Rust development environments using `cargo`. It got a consistent and reproducible starting point which makes it easier to apply improvements when the template is updated.
 
 
 ### Prerequisites
@@ -18,7 +18,7 @@ Install the Copier command:
 Run the following command:
 
 ```bash
-$ copier copy --trust git@github.com:karnull/templates path/to/project
+$ copier copy --trust --vcs-ref=rust git@github.com:karnull/templates path/to/project
 ```
 * **Project Description:** Answer the Copier prompt with an optional plain‑text description of your project.
 * The `--trust` option is required because the template runs `git` commands.

@@ -5,15 +5,14 @@ return {
     cd_root =  true,
 
     commands = {
-        run    = '',
-        build  = '',
-        test   = '',
+        run    = 'devcontainer exec cargo run',
+        build  = 'devcontainer exec cargo build --release',
+        test   = 'devcontainer exec cargo test',
     },
 
     binds = {
-        label  = '',
-        import = '',
-        openbr = '',
+        label  = 'O/*<Esc>76A-<Esc>A*/<CR>',
+        openbr = 'A {<CR>}<Esc>O',
     }
 }
 

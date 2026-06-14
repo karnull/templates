@@ -1,7 +1,7 @@
 
 _min_copier_version: "9.10.0"
 _subdirectory: template
-_answers_file: .copier-generic-project/.copier-answers.yml
+_answers_file: .copier-generic-project/.copier-rs-answers.yml
 
 #===============================================================================
 # Interactive
@@ -92,8 +92,6 @@ year:
 # Tasks
 
 _tasks:
-  - command: 'mkdir {{ module_slug }}'
-    when: "{{ _copier_operation == 'copy' }}"
   - command: 'git init'
     when: "{{ _copier_operation == 'copy' }}"
   - command: 'git branch -M main'
