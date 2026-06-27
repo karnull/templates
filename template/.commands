@@ -6,8 +6,12 @@ return {
 
     commands = {
         run    = 'devcontainer exec cargo run',
-        build  = 'devcontainer exec cargo build --release',
         test   = 'devcontainer exec cargo test',
+        build  = 'devcontainer exec cargo build --release',
+        buildw   = 'devcontainer exec sh -lc "rustup target add x86_64-pc-windows-msvc && cargo build --release --target x86_64-pc-windows-msvc"',
+        buildw32 = 'devcontainer exec sh -lc "rustup target add i686-pc-windows-msvc && cargo build --release --target i686-pc-windows-msvc"',
+        buildd   = 'devcontainer exec sh -lc "rustup target add aarch64-apple-darwin && cargo build --release --target aarch64-apple-darwin"',
+        buildd64 = 'devcontainer exec sh -lc "rustup target add x86_64-apple-darwin && cargo build --release --target x86_64-apple-darwin"',
     },
 
     binds = {
