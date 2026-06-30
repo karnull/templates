@@ -6,8 +6,16 @@ return {
 
     commands = {
         run    = 'devcontainer exec go run .',
-        build  = 'devcontainer exec go build .',
         debug  = 'devcontainer exec dlv debug',
+        build     = 'devcontainer exec go build .',                                                                    -- devcontainer default
+        buildl    = 'devcontainer exec GOOS=linux GOARCH=amd64 go build -race -o ./bin/myapp-linux-x64 main.go',       -- linux amd64
+        buildla   = 'devcontainer exec GOOS=linux GOARCH=arm64 go build -race -o ./bin/myapp-linux-arm64 main.go',     -- linux arm64
+        buildl32  = 'devcontainer exec GOOS=linux GOARCH=386 go build -race -o ./bin/myapp-linux-x86 main.go',         -- linux x86
+        buildw    = 'devcontainer exec GOOS=windows GOARCH=amd64 go build -race -o ./bin/myapp-win-x64.exe main.go',   -- windows amd64
+        buildwa   = 'devcontainer exec GOOS=windows GOARCH=arm64 go build -race -o ./bin/myapp-win-arm64.exe main.go', -- windows arm64
+        buildw32  = 'devcontainer exec GOOS=windows GOARCH=386 go build -race -o ./bin/myapp-win-x86.exe main.go',     -- windows x86
+        buildd    = 'devcontainer exec GOOS=darwin GOARCH=arm64 go build -race -o ./bin/myapp-darwin-arm main.go',     -- darwin arm64
+        buildd64  = 'devcontainer exec GOOS=darwin GOARCH=amd64 go build -race -o ./bin/myapp-darwin-intel main.go',   -- darwin amd64
     },
 
     binds = {
